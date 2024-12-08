@@ -6,6 +6,7 @@
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.12",
+    "animate.css": "^3.7.0",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "emailjs-com": "^3.2.0",
@@ -54,7 +55,6 @@
   },
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Chienkaty/Website_Freelancer.git"

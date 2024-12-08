@@ -10,6 +10,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Activities } from "../pages/activities";
 import { Contributors } from "../pages/contributors";
 import Login from "../pages/login";
+import Appointment from "../pages/appointment";
 
 const AnimatedRoutes = withRouter(({ location }) => (
   <TransitionGroup>
@@ -30,7 +31,11 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/contact" element={<ContactUs />} />
         <Route path="*" element={<Home />} />
         <Route path="/recruitment" element={<Recruit />} />
-        <Route path="/contributors" element={<Contributors />} />
+        {/* Page admin */}
+        <Route path="/appointment-mng" element={<Appointment />} />
+        <Route path="/customer-mng" element={<Contributors />} />
+        <Route path="/project-mng" element={<Contributors />} />
+        <Route path="/bill-mng" element={<Contributors />} />
       </Routes>
     </CSSTransition>
   </TransitionGroup>

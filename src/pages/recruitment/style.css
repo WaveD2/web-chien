@@ -15,7 +15,6 @@
   object-fit: cover;
 }
 
-
 /* Button Apply Styling */
 #button_apply {
   width: 200px;
@@ -57,14 +56,16 @@
 }
 
 .overlay-image2 {
-  left: -50px;
-  width: 70px;
-  height: 70px;
+  left: -20px;
+  bottom: -30px;
+  width: 60px;
+  height: 60px;
   animation: move-left 5s infinite;
 }
 
 @keyframes move-right {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   50% {
@@ -73,7 +74,8 @@
 }
 
 @keyframes move-left {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   50% {
@@ -81,19 +83,16 @@
   }
 }
 
-/* Info Row Styling */
 .inforrow {
   display: inline-block;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: pre-wrap;
-  margin-top: 40px;
   background-color: rgba(0, 0, 0, 0.3);
   font-size: medium;
   text-align: left;
 }
 
-/* Column Layout Adjustments */
 .rightcol {
   align-items: center;
   text-align: center;
@@ -119,5 +118,81 @@
   .overlay-image1,
   .overlay-image2 {
     display: none;
+  }
+}
+
+.left-content {
+  color: white;
+}
+
+.t_border {
+  border: 1px solid white;
+}
+
+.form-container {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h3 {
+  color: white;
+  font-weight: bold;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-item {
+  grid-column: span 1;
+}
+
+.form-item:nth-child(5) {
+  grid-column: span 2;
+}
+
+.form-control,
+.form-select {
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #555;
+}
+
+.form-control::placeholder,
+.form-select {
+  color: #aaa;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.btn-submit {
+  background-color: #444;
+  border: 1px solid #888;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: white;
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-item {
+    grid-column: span 1;
   }
 }

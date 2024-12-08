@@ -1,0 +1,59 @@
+.table {
+    background-color: #1c1c1c; /* Màu nền đen */
+    color: #1c1c1c; /* Màu chữ trắng */
+    border-radius: 8px; /* Bo góc */
+    overflow: hidden;
+    border: #1c1c1c; /* Loại bỏ viền mặc định */
+}
+
+.table thead {
+    background-color: #333333; /* Màu nền cho phần tiêu đề */
+}
+
+.table thead th {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #f8f9fa; /* Màu chữ nhẹ hơn */
+    font-size: 14px;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease-in-out; /* Thêm hiệu ứng hover */
+}
+
+.table tbody tr:hover {
+    background-color: #444444; /* Đổi màu khi hover */
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Nút chỉnh sửa */
+button {
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+button.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+button.btn-danger:hover {
+    background-color: #a71d2a;
+    border-color: #8a1220;
+}

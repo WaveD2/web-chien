@@ -187,8 +187,10 @@ const page_header = {
         style: {
 
         }
-    },],
-    private: [{
+    },
+    // ],
+    // private: [
+    {
         title: "Trang chủ",
         path: "/",
         type: "user",
@@ -197,28 +199,28 @@ const page_header = {
         }
     },
     {
-        title: "Trang quản lý lịch hẹn",
+        title: "Quản lý lịch hẹn",
         path: "/appointment-mng",
         type: "user",
         style: {
 
         }
     }, {
-        title: "Trang quản lý khách hàng",
+        title: "Quản lý khách hàng",
         path: "/customer-mng",
         type: "user",
         style: {
 
         }
     }, {
-        title: "Trang quản lý dự án",
+        title: "Quản lý dự án",
         path: "/project-mng",
         style: {
 
         },
 
     }, {
-        title: "Trang quản lý thanh toán",
+        title: "Quản lý thanh toán",
         path: "/bill-mng",
         style: {
 
