@@ -10,7 +10,6 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Activities } from "../pages/activities";
 import { Contributors } from "../pages/contributors";
 import Login from "../pages/login";
-import AdminHome from "../Pagesadmin/home";// Import trang Home cho admin
 
 const AnimatedRoutes = withRouter(({ location }) => (
   <TransitionGroup>
