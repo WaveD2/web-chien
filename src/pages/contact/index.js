@@ -11,7 +11,7 @@ import home6 from "../../assets/images/home6.jpg";
 import Preloader from "../../components/preload/Pre";
 
 export const ContactUs = () => {
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -91,18 +91,18 @@ export const ContactUs = () => {
   return (
     <HelmetProvider>
       <FocusRing />
-      <Container>
+      <Container className="p-header">
         <Helmet>
           <title>Liên hệ | {meta.title}</title>
         </Helmet>
-        
+
         <Preloader />
 
 
         <div className="backgroundvideo grain">
           <img src={home6} alt="background" />
         </div>
-        <Row className="mb-5 mt-3 pt-md-3">
+        <Row className=" mt-3">
           <Col lg="8">
             <h1 className="display-4 mb-4">
               Liên hệ tư vấn <span className="wave">👋</span>

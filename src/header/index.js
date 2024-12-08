@@ -1,49 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
-import { Link } from "react-router-dom";
-import { logotext, socialprofils } from "../content_option";
+import { Link, useNavigate } from "react-router-dom";
+import { logotext, page_header, socialprofils } from "../content_option";
 // import clublogo_transparent from "../assets/images/clublogo_transparent.png";
-const Headermain = () => {
-  const [isActive, setActive] = useState("false");
 
-  const handleToggle = () => {
-    setActive(!isActive);
-    // document.body.classList.toggle("ovhidden");
-  };
+const Headermain = () => {
+  const [page, setPage] = useState("public");
+
+  const navigate = useNavigate();
+
+
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      navigate("/");
+      setPage("private")
+    }
+  }, [navigate]);
 
   return (
-    <>
-      <header className="fixed-top site__header">
-        <div className="d-flex align-items-center justify-content-between">
-
-          <Link className="navbar-brand nav_ac" to="/" ></Link> 
+    <React.Fragment>
+      <header className="fixed-top site__header wrapper__header">
+        <div className="d-flex align-items-center justify-content-between h-full">
+          <Link className="navbar-brand nav_ac" to="/" ></Link>
           {/* logo studio */}
-          <div className="d-flex" >
+          <div className="d-flex">
             <ul className="" style={{
-              display : "flex",
-              gap : "20px",
+              display: "flex",
+              gap: "20px",
+              margin: 0,
+              padding: 0
             }}>
-
-                    <li className="menu_item" >
-                      <Link onClick={handleToggle} style={{textDecoration : "none"}} to="/" className="my-3">Trang chủ</Link>
+              {
+                page_header[page].map((item, i) => {
+                  return (
+                    <li key={i} className="menu_item" >
+                      <Link onClick={item?.handler} style={{ textDecoration: "none", ...item.style }} to={item.path} className="my-3">{item.title}</Link>
                     </li>
-                    <li className="menu_item"  >
-                      <Link onClick={handleToggle}  style={{textDecoration : "none"}}to="/activities" className="my-3">Sản phẩm</Link>
-                    </li>
-                    <li className="menu_item" >
-                      <Link onClick={handleToggle} style={{textDecoration : "none"}} to="/recruitment" className="my-3">Đặt lịch</Link>
-                    </li>
-                    <li className="menu_item" >
-                      <Link onClick={handleToggle} style={{textDecoration : "none"}} to="/contact" className="my-3"> Liên hệ</Link>
-                    </li>
-                    <li className="menu_item" >
-                      <Link onClick={handleToggle} style={{textDecoration : "none"}} to="/about" className="my-3"> Giới thiệu </Link>
-                    </li>
-                    <li className="menu_item" >
-                      <Link onClick={handleToggle} style={{textDecoration : "none"}} to="/login" className="my-3">Đăng Nhập</Link>
-                    </li>
-                  </ul>
+                  )
+                })
+              }
+            </ul>
           </div>
         </div>
       </header>
@@ -51,8 +50,7 @@ const Headermain = () => {
       <div className="br-bottom"></div>
       <div className="br-left"></div>
       <div className="br-right"></div>
-
-    </>
+    </React.Fragment>
   );
 };
 

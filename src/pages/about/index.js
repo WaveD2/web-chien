@@ -42,7 +42,7 @@ export const About = () => {
     <HelmetProvider>
       <FocusRing />
 
-      <Container className="About-header">
+      <Container className="About-header p-header">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Giới thiệu | {meta.title}</title>
@@ -58,7 +58,7 @@ export const About = () => {
           <Col lg="6">
             <h1 className="display-4 mb-4" style={{ textAlign: "left" }}>Thông tin về tôi</h1>
           </Col>
-      
+
         </Row>
 
         <hr className="mt-3"></hr>
@@ -87,9 +87,9 @@ export const About = () => {
           <Row>
             <h3 className="color_sec py-4">  </h3>
           </Row>
-        
+
         </Row>
-        
+
 
         <Row className="mt-3 mb-3"></Row>
       </Container>

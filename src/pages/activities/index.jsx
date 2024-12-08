@@ -11,7 +11,7 @@ import Preloader from "../../components/preload/Pre";
 import tvc from "../../assets/images/tvc.jpg";
 
 export const Activities = () => {
-  
+
 
   useEffect(() => {
     // Scroll event for the blur effect
@@ -28,7 +28,7 @@ export const Activities = () => {
     window.addEventListener('scroll', handleScroll);
 
     return () => {
-     
+
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -37,37 +37,37 @@ export const Activities = () => {
     <HelmetProvider>
       <FocusRing />
 
-      <Container className="About-header">
+      <Container className="About-header p-header">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Sản phẩm | {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
 
-         <Preloader />
-        
-       
-            <div className="backgroundvideo grain">
-              <img loading="lazy"src={tvc} alt="background" />
-            </div>
-            <Row className="mb-5 mt-3 pt-md-3">
-              <Col lg="12">
-                <h1 className="display-4" style={{ textAlign: "left" }}>
-                  Sản phẩm
-                </h1>
-                <hr />
-              </Col>
-            </Row>
-            <Row className="mb-5 mt-3 pt-md-3">
-              <Col lg="12" xl="12" className="slide">
-                <Slide />
-              </Col>
-            </Row>
-            <Row className="mb-5 mt-3 pt-md-3">
-              <Anual />
-            </Row>
-          
-        
+        <Preloader />
+
+
+        <div className="backgroundvideo grain">
+          <img loading="lazy" src={tvc} alt="background" />
+        </div>
+        <Row className="mb-5 mt-3 pt-md-3">
+          <Col lg="12">
+            <h1 className="display-4" style={{ textAlign: "left" }}>
+              Sản phẩm
+            </h1>
+            <hr />
+          </Col>
+        </Row>
+        <Row className="mb-5 mt-3 pt-md-3">
+          <Col lg="12" xl="12" className="slide">
+            <Slide />
+          </Col>
+        </Row>
+        <Row className="mb-5 mt-3 pt-md-3">
+          <Anual />
+        </Row>
+
+
       </Container>
     </HelmetProvider>
   );

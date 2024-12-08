@@ -41,7 +41,7 @@ const introdata = {
     title: "We are Photoconcept ",
     "animated": {
         "first": "Photo Concept",
-        "second":"Photo Graduation",
+        "second": "Photo Graduation",
         "third": "Photo Prewedding",
         "fourth": "Photo Event",
         "five": "Photo Family",
@@ -50,7 +50,7 @@ const introdata = {
 
     },
     description: "Lưu Chọn Khoảnh Khắc – Nơi những bức ảnh không chỉ là những khoảnh khắc được ghi lại, mà là những câu chuyện, cảm xúc và ký ức được lưu giữ mãi mãi. Hãy để mỗi bức ảnh trở thành một dấu ấn độc đáo trong hành trình sáng tạo của bạn",
-    
+
 };
 
 //page home admin
@@ -106,7 +106,7 @@ const activitiesData = [
 //page projects
 // các project trong page projects
 const dataportfolio = [
-    
+
 ];
 
 // thông tin trong page đăng ký lịch hẹn
@@ -143,8 +143,100 @@ const Prizes = [{
 //-----------------------------------------------------------------------------------
 //page contribution
 const contributors = [
-  
+
 ];
+
+const page_header = {
+    public: [{
+        title: "Trang chủ",
+        path: "/",
+        type: "user",
+        style: {
+
+        }
+    },
+    {
+        title: "Sản phẩm",
+        path: "/activities",
+        type: "user",
+        style: {
+
+        }
+    }, {
+        title: "Liên hệ",
+        path: "/contact",
+        type: "user",
+        style: {
+
+        }
+    }, {
+        title: "Giới thiệu",
+        path: "/about",
+        style: {
+
+        }
+    }, {
+        title: "Đặt lịch",
+        path: "/recruitment",
+        style: {
+
+        }
+    }, {
+        title: "Đăng nhập",
+        path: "/login",
+        style: {
+
+        }
+    },],
+    private: [{
+        title: "Trang chủ",
+        path: "/",
+        type: "user",
+        style: {
+
+        }
+    },
+    {
+        title: "Trang quản lý lịch hẹn",
+        path: "/appointment-mng",
+        type: "user",
+        style: {
+
+        }
+    }, {
+        title: "Trang quản lý khách hàng",
+        path: "/customer-mng",
+        type: "user",
+        style: {
+
+        }
+    }, {
+        title: "Trang quản lý dự án",
+        path: "/project-mng",
+        style: {
+
+        },
+
+    }, {
+        title: "Trang quản lý thanh toán",
+        path: "/bill-mng",
+        style: {
+
+        },
+        handler: () => {
+        }
+    }, {
+        title: "Đăng xuất",
+        path: "/logout",
+        style: {
+
+        },
+        handler: () => {
+            localStorage.removeItem("loggedInUser");
+            window.location.reload();
+        }
+    },]
+}
 export {
     meta,  // thông tin meta
     dataabout, // thông tin giới thiệu ở page about
@@ -159,4 +251,5 @@ export {
     departments,// các ban trong CLB
     recruitmentpage,// thông tin trong page truyển thành viên
     contributors, // thông tin về các contributor
+    page_header,
 };

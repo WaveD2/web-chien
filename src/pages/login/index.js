@@ -1,135 +1,84 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import React, { useState, useEffect, useRef } from "react";
+import { Form, Button, Container, Alert } from "react-bootstrap";
+import { useNavigate } from "react-router-dom"; // Đảm bảo bạn đã cài đặt react-router-dom
+import "./style.css";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  //const navigate = useNavigate(); // Hook để điều hướng
+  const [isFormValid, setIsFormValid] = useState(false);
+  const usernameRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      navigate("/home");
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    if (usernameRef.current) {
+      usernameRef.current.focus();
+    }
+  }, []);
 
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  useEffect(() => {
+    setIsFormValid(username.trim() !== "" && password.trim() !== "");
+  }, [username, password]);
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-
-    // Kiểm tra tài khoản đăng nhập
-    const fixedAccount = { email: "admin", password: "123456789" };
-
-    if (
-      formData.email === fixedAccount.email &&
-      formData.password === fixedAccount.password
-    ) {
-      alert("Đăng nhập thành công!");
-      //navigate("/admin-home"); // Điều hướng đến giao diện admin
-
-
-      // Thêm logic điều hướng sau khi đăng nhập thành công
-     window.location.href = "/admin-home";
+    if (username === "admin" && password === "12345678") {
+      setError("");
+      localStorage.setItem("loggedInUser", JSON.stringify({ username }));
+      navigate("/home");
     } else {
-      setError("Email hoặc mật khẩu không đúng!");
+      setError("Thông tin đăng nhập không chính xác!");
     }
   };
 
-  // CSS dưới dạng object
-  const styles = {
-    container: {
-      backgroundColor: "#fff",
-      padding: "20px 30px",
-      borderRadius: "10px",
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-      width: "100%",
-      maxWidth: "400px",
-      margin: "50px auto",
-      textAlign: "center",
-      fontFamily: "Arial, sans-serif",
-    },
-    header: {
-      marginBottom: "20px",
-      color: "#333",
-    },
-    form: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "15px",
-    },
-    label: {
-      fontWeight: "bold",
-      color: "#555",
-      marginBottom: "5px",
-      display: "block",
-    },
-    input: {
-      width: "100%",
-      padding: "10px",
-      border: "1px solid #ddd",
-      borderRadius: "5px",
-      fontSize: "14px",
-    },
-    inputFocus: {
-      borderColor: "#007bff",
-      outline: "none",
-    },
-    button: {
-      backgroundColor: "#007bff",
-      color: "#fff",
-      padding: "10px",
-      border: "none",
-      borderRadius: "5px",
-      fontSize: "16px",
-      cursor: "pointer",
-      transition: "background-color 0.3s",
-    },
-    buttonHover: {
-      backgroundColor: "#0056b3",
-    },
-    errorText: {
-      color: "red",
-      fontSize: "14px",
-      margin: "0",
-    },
-  };
-
   return (
-    <div style={styles.container}>
-      <h2 style={styles.header}>Đăng Nhập</h2>
-      <form style={styles.form} onSubmit={handleSubmit}>
-        <div>
-          <label style={styles.label}>Email:</label>
-          <input
-            style={styles.input}
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label style={styles.label}>Mật khẩu:</label>
-          <input
-            style={styles.input}
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        {error && <p style={styles.errorText}>{error}</p>}
-        <button
-          type="submit"
-          style={{
-            ...styles.button,
-            ":hover": styles.buttonHover,
-          }}
-        >
-          Đăng Nhập
-        </button>
-      </form>
-    </div>
+    <Container
+      className="d-flex justify-content-center align-items-center login-container"
+    >
+      <div className="login-box">
+        <h3 className="text-center login-title">Welcome Back</h3>
+        {error && <Alert variant="danger" className="login-alert">{error}</Alert>}
+        <Form onSubmit={handleLogin}>
+          <Form.Group className="mb-3">
+            <Form.Label className="login-label">Tên đăng nhập</Form.Label>
+            <Form.Control
+              ref={usernameRef}
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="login-input"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label className="login-label">Mật khẩu</Form.Label>
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="login-input"
+            />
+          </Form.Group>
+          <Button
+            variant="primary"
+            type="submit"
+            className="w-100 login-button"
+            disabled={!isFormValid}
+          >
+            Đăng nhập
+          </Button>
+        </Form>
+      </div>
+    </Container>
   );
 };
 

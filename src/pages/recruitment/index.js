@@ -10,19 +10,19 @@ import Camera from "../../assets/cam.png";
 import home7 from "../../assets/images/home7.jpg";
 import SoftSkillicon from "../../assets/soft.png";
 export const Recruit = () => {
-  
+
   return (
     <HelmetProvider >
-        <div className="backgroundvideo grain">
-          <img loading="lazy" src={home7} alt="background" />
-        </div>
-      <Container >
+      <div className="backgroundvideo grain">
+        <img loading="lazy" src={home7} alt="background" />
+      </div>
+      <Container className="p-header">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Đặt lịch | {meta.title}</title>
           <meta name="description" content={meta.description} />
-        </Helmet>    
-        <Preloader /> 
+        </Helmet>
+        <Preloader />
 
         <Row className="mt-3 pt-md-3">
           <Col lg="12">
@@ -36,17 +36,17 @@ export const Recruit = () => {
               <div className="text-container">
                 <p>{recruitmentpage.title1}</p>
                 <br></br>
-                <img loading="lazy"src={Camera} alt="Overlay 1" className="overlay-image1" />
+                <img loading="lazy" src={Camera} alt="Overlay 1" className="overlay-image1" />
               </div>
             </Row>
             <Row className="inforrow">
               <div className="text-container">
                 <p>{recruitmentpage.title2}</p>
-                <img loading="lazy"src={SoftSkillicon} alt="Overlay 2" className="overlay-image2" />
+                <img loading="lazy" src={SoftSkillicon} alt="Overlay 2" className="overlay-image2" />
               </div>
             </Row>
           </Col>
-          
+
 
           {/* <Col lg="8" className="rightcol">
             <Row className="mt-3" >
