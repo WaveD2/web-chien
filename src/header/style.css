@@ -1,6 +1,7 @@
 .wrapper__header {
     height: var(--height-header);
     width: 100%;
+    box-shadow: 0 0 10px rgba(240, 240, 240, 0.1);
 }
 .site__header {
     background-color: var(--primary-color);

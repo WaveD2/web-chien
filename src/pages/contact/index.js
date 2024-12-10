@@ -42,21 +42,18 @@ export const ContactUs = () => {
     e.preventDefault();
     setFormData({ ...formData, loading: true });
 
-    const templateParams = {
-      email: formData.email,
-      name: formData.name,
-      phone: formData.phone,
-      address: formData.address,
-      to_name: contactConfig.YOUR_EMAIL,
-      message: formData.message,
-    };
-
     emailjs
       .send(
-        contactConfig.YOUR_SERVICE_ID,
-        contactConfig.YOUR_TEMPLATE_ID,
-        templateParams,
-        contactConfig.YOUR_USER_ID
+        // contactConfig.YOUR_SERVICE_ID,
+        "service_kjet5mk",
+        // contactConfig.YOUR_TEMPLATE_ID,
+        "template_hhqwuoi",
+        {
+          to_name: formData.name,
+          to_email: formData.email,
+        },
+        // contactConfig.YOUR_USER_ID,
+        "ZICi4jVGSIwwRTyMd"
       )
       .then(
         (result) => {
@@ -97,7 +94,6 @@ export const ContactUs = () => {
         </Helmet>
 
         <Preloader />
-
 
         <div className="backgroundvideo grain">
           <img src={home6} alt="background" />

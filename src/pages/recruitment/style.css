@@ -15,7 +15,6 @@
   object-fit: cover;
 }
 
-/* Button Apply Styling */
 #button_apply {
   width: 200px;
   background: var(--secondary-color);
@@ -35,7 +34,6 @@
   }
 }
 
-/* Overlay Section Styling */
 .text-container {
   position: relative;
   padding: 10px;

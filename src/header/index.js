@@ -10,12 +10,10 @@ const Headermain = () => {
 
   const navigate = useNavigate();
 
-
-
   useEffect(() => {
     const loggedInUser = localStorage.getItem("loggedInUser");
     if (loggedInUser) {
-      navigate("/");
+      // navigate("/");
       setPage("private")
     }
   }, [navigate]);

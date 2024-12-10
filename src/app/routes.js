@@ -8,9 +8,10 @@ import { Socialicons } from "../components/socialicons";
 import { Recruit } from "../pages/recruitment";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Activities } from "../pages/activities";
-import { Contributors } from "../pages/contributors";
 import Login from "../pages/login";
 import Appointment from "../pages/appointment";
+import { ProjectManage } from "../pages/project";
+import CustomerMng from "../pages/customer";
 
 const AnimatedRoutes = withRouter(({ location }) => (
   <TransitionGroup>
@@ -33,9 +34,9 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/recruitment" element={<Recruit />} />
         {/* Page admin */}
         <Route path="/appointment-mng" element={<Appointment />} />
-        <Route path="/customer-mng" element={<Contributors />} />
-        <Route path="/project-mng" element={<Contributors />} />
-        <Route path="/bill-mng" element={<Contributors />} />
+        <Route path="/customer-mng" element={<CustomerMng />} />
+        <Route path="/project-mng" element={<ProjectManage />} />
+        {/* <Route path="/bill-mng" element={<Contributors />} /> */}
       </Routes>
     </CSSTransition>
   </TransitionGroup>

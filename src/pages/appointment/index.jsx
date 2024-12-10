@@ -7,7 +7,7 @@ import { createApi, getAllApi, deleteApi } from "../../supabaseService";
 import PaginationComponent from "../../components/pagination";
 
 
-export const CustomerMng = () => {
+export const Appointment = () => {
   const [appointments, setAppointments] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -80,7 +80,7 @@ export const CustomerMng = () => {
         show={showModal}
         handleClose={handleCloseModal}
         handleSave={handleSaveCustomer}
-        title={"Thêm khách hàng"}
+        title={selectedAppointment ? "Chỉnh Sửa Lịch Hẹn" : "Thêm Lịch Hẹn"}
         fields={[
           { name: "fullName", type: "text", label: "Họ và Tên", placeholder: "Nhập họ và tên", required: true },
           { name: "email", type: "text", label: "Email", placeholder: "Nhập email", required: true },
@@ -99,18 +99,6 @@ export const CustomerMng = () => {
             },
           },
           {
-            name: "status", type: "select", label: "Trạng thái", options: [
-              { value: "", label: "Chọn tiến trình" },
-              { value: "Chờ xác nhận", label: "Chờ xác nhận" },
-              { value: "Xác nhận", label: "Xác nhận" },
-              { value: "Từ chối", label: "Từ chối" }
-            ], value: selectedAppointment?.status || "", required: true,
-            style: {
-              padding: "6px 10px",
-              color: "#fff"
-            },
-          },
-          {
             name: "address", type: "textarea", label: "Địa chỉ", placeholder: "Nhập địa chỉ", value: selectedAppointment?.address || "", style: {
               marginTop: "10px"
             }
@@ -121,7 +109,7 @@ export const CustomerMng = () => {
       <AppointmentTable
         isLoading={isLoading}
         rows={appointments}
-        columns={["Tên", "SĐT", "Email", "Lịch Hẹn", "Dịch Vụ", "Địa Chỉ", "Trạng Thái", "Chỉnh Sửa"]}
+        columns={["Tên", "SĐT", "Email", "Lịch Hẹn", "Dịch Vụ", "Địa Chỉ", "Chỉnh Sửa"]}
         onDelete={handleDeleteCustomer}
         onEdit={handleEditCustomer}
       />
@@ -135,4 +123,4 @@ export const CustomerMng = () => {
   );
 };
 
-export default CustomerMng;
+export default Appointment;

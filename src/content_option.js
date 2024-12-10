@@ -188,56 +188,49 @@ const page_header = {
 
         }
     },
-    // ],
-    // private: [
-    {
-        title: "Trang chủ",
-        path: "/",
-        type: "user",
-        style: {
+    ],
+    private: [
+        {
+            title: "Trang chủ",
+            path: "/",
+            type: "user",
+            style: {
+            }
+        },
+        {
+            title: "Quản lý lịch hẹn",
+            path: "/appointment-mng",
+            type: "user",
+            style: {
 
-        }
-    },
-    {
-        title: "Quản lý lịch hẹn",
-        path: "/appointment-mng",
-        type: "user",
-        style: {
+            }
+        }, {
+            title: "Quản lý khách hàng",
+            path: "/customer-mng",
+            type: "user",
+            style: {
 
-        }
-    }, {
-        title: "Quản lý khách hàng",
-        path: "/customer-mng",
-        type: "user",
-        style: {
+            }
+        }, {
+            title: "Quản lý dự án",
+            path: "/project-mng",
+            style: {
 
-        }
-    }, {
-        title: "Quản lý dự án",
-        path: "/project-mng",
-        style: {
+            },
 
         },
+        {
+            title: "Đăng xuất",
+            path: "/logout",
+            style: {
 
-    }, {
-        title: "Quản lý thanh toán",
-        path: "/bill-mng",
-        style: {
-
-        },
-        handler: () => {
-        }
-    }, {
-        title: "Đăng xuất",
-        path: "/logout",
-        style: {
-
-        },
-        handler: () => {
-            localStorage.removeItem("loggedInUser");
-            window.location.reload();
-        }
-    },]
+            },
+            handler: () => {
+                localStorage.removeItem("loggedInUser");
+                window.location.reload();
+                window.location.href = "/";
+            }
+        },]
 }
 export {
     meta,  // thông tin meta

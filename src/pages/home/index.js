@@ -11,10 +11,10 @@ const Activities = lazyWithPreload(() => import("../activities/activeslide"));
 Activities.preload();
 
 export const Home = () => {
-  
+  const user = localStorage.getItem("loggedInUser");
+
   return (
     <HelmetProvider>
-      
       <section id="home" className="home">
         <Helmet>
           <meta charSet="utf-8" />
@@ -60,26 +60,18 @@ export const Home = () => {
                     />
                   </h1>
                   <p className="mb-1x breakword">{introdata.description}</p>
-                  
+
                   <div className="intro_btn-action pb-5">
-                    <Link to="/contact">
+                    <Link to={`${user ? "/appointment-mng" : "/recruitment"}`}>
                       <div id="button_h" className="ac_btn btn">
-                        Liên hệ tư vấn ngay!
-                        <div className="ring one"></div>
-                        <div className="ring two"></div>
-                        <div className="ring three"></div>
-                      </div>
-                    </Link>
-                    <Link to="/recruitment" className="text_2">
-                      <div id="button_p" className="ac_btn btn">
-                        Đặt lịch ngay!
+                        {user ? "Quản lý lịch" : "Đặt lịch ngay!"}
                         <div className="ring one"></div>
                         <div className="ring two"></div>
                         <div className="ring three"></div>
                       </div>
                     </Link>
                   </div>
-                  <p style={{ marginTop: "10px" }}>#CheinProduction</p>              
+                  <p style={{ marginTop: "10px" }}>#CheinProduction</p>
                   <p style={{ marginTop: "-20px" }}>#Lưu_chọn_khoảnh_khắc</p>
                 </div>
               </div>
