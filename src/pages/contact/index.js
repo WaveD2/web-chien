@@ -59,7 +59,11 @@ export const ContactUs = () => {
         (result) => {
           console.log(result.text);
           setFormData({
-            ...formData,
+            email: "",
+            name: "",
+            phone: "",
+            address: "",
+            message: "",
             loading: false,
             alertmessage: "SUCCESS! Thank you for your message.",
             variant: "success",
@@ -69,7 +73,12 @@ export const ContactUs = () => {
         (error) => {
           console.log(error.text);
           setFormData({
-            ...formData,
+            email: "",
+            name: "",
+            phone: "",
+            address: "",
+            message: "",
+            loading: false,
             alertmessage: `Failed to send! ${error.text}`,
             variant: "danger",
             show: true,

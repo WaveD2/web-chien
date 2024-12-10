@@ -62,7 +62,7 @@ export const Home = () => {
                   <p className="mb-1x breakword">{introdata.description}</p>
 
                   <div className="intro_btn-action pb-5">
-                    <Link to={`${user ? "/appointment-mng" : "/recruitment"}`}>
+                    <Link to={`${user ? "/appointment-mng" : "/booking"}`}>
                       <div id="button_h" className="ac_btn btn">
                         {user ? "Quản lý lịch" : "Đặt lịch ngay!"}
                         <div className="ring one"></div>

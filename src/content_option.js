@@ -177,7 +177,7 @@ const page_header = {
         }
     }, {
         title: "Đặt lịch",
-        path: "/recruitment",
+        path: "/booking",
         style: {
 
         }

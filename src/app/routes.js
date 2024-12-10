@@ -5,7 +5,7 @@ import { Home } from "../pages/home";
 import { ContactUs } from "../pages/contact";
 import { About } from "../pages/about";
 import { Socialicons } from "../components/socialicons";
-import { Recruit } from "../pages/recruitment";
+import { Booking } from "../pages/booking";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Activities } from "../pages/activities";
 import Login from "../pages/login";
@@ -31,7 +31,7 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/activities" element={<Activities />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="*" element={<Home />} />
-        <Route path="/recruitment" element={<Recruit />} />
+        <Route path="/booking" element={<Booking />} />
         {/* Page admin */}
         <Route path="/appointment-mng" element={<Appointment />} />
         <Route path="/customer-mng" element={<CustomerMng />} />

@@ -12,7 +12,7 @@ import SoftSkillicon from "../../assets/soft.png";
 import { createApi } from '../../supabaseService';
 import * as emailjs from "emailjs-com";
 
-export const Recruit = () => {
+export const Booking = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
