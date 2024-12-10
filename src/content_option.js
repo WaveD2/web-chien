@@ -220,6 +220,14 @@ const page_header = {
 
         },
         {
+            title: "Quản lý thanh toán",
+            path: "/bill-mng",
+            style: {
+
+            },
+
+        },
+        {
             title: "Đăng xuất",
             path: "/logout",
             style: {

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Form, Button, Container, Alert } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Đảm bảo bạn đã cài đặt react-router-dom
+import { useNavigate } from "react-router-dom";
 import "./style.css";
+import home9 from "../../assets/images/home9.jpg";
+import FocusRing from "../../components/focusring";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -45,6 +47,10 @@ const Login = () => {
     <Container
       className="d-flex justify-content-center align-items-center login-container"
     >
+      <div className="backgroundvideo grain">
+        <img loading="lazy" src={home9} alt="background" />
+      </div>
+
       <div className="login-box">
         <h3 className="text-center login-title">Welcome Back</h3>
         {error && <Alert variant="danger" className="login-alert">{error}</Alert>}

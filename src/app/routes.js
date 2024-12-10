@@ -36,7 +36,7 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/appointment-mng" element={<Appointment />} />
         <Route path="/customer-mng" element={<CustomerMng />} />
         <Route path="/project-mng" element={<ProjectManage />} />
-        {/* <Route path="/bill-mng" element={<Contributors />} /> */}
+        <Route path="/bill-mng" element={<CustomerMng />} />
       </Routes>
     </CSSTransition>
   </TransitionGroup>

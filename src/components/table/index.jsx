@@ -2,6 +2,8 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import "./style.css";
 import Loading from "../loading/loading";
+import { truncateText } from "../../until";
+
 
 const AppointmentTable = ({ rows, columns, isLoading = true, onDelete, onEdit }) => {
     return (
@@ -23,13 +25,15 @@ const AppointmentTable = ({ rows, columns, isLoading = true, onDelete, onEdit })
                         <tbody>
                             {rows.map((appointment, index) => (
                                 <tr key={index}>
-                                    <td>{appointment.fullName}</td>
-                                    <td>{appointment.phone}</td>
-                                    <td>{appointment.email}</td>
+                                    <td>{truncateText(appointment.fullName, 20)}</td>
+                                    <td>{truncateText(appointment.phone, 15)}</td>
+                                    <td>{truncateText(appointment.email, 25)}</td>
                                     <td>{appointment.bookingDate}</td>
-                                    <td>{appointment.serviceType}</td>
-                                    <td>{appointment.address}</td>
-                                    {columns.includes("Trạng Thái") && <td>{appointment.status}</td>}
+                                    <td>{truncateText(appointment.serviceType, 20)}</td>
+                                    <td>{truncateText(appointment.address, 30)}</td>
+                                    {columns.includes("Trạng Thái") && (
+                                        <td>{truncateText(appointment.status, 10)}</td>
+                                    )}
                                     <td className="action-buttons">
                                         <Button
                                             variant="primary"
