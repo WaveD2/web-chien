@@ -63,7 +63,7 @@ export const Home = () => {
 
                   <div className="intro_btn-action pb-5">
                     <Link to={`${user ? "/appointment-mng" : "/booking"}`}>
-                      <div id="button_h" className="ac_btn btn">
+                      <div id="button_p" className="ac_btn btn">
                         {user ? "Quản lý lịch" : "Đặt lịch ngay!"}
                         <div className="ring one"></div>
                         <div className="ring two"></div>
@@ -73,7 +73,7 @@ export const Home = () => {
                     {
                       !user &&
                       <Link to="/contact">
-                        <div id="button_p" className="ac_btn btn">
+                        <div id="button_h" className="ac_btn btn">
                           Liên hệ ngay
                           <div className="ring one"></div>
                           <div className="ring two"></div>

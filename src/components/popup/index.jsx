@@ -3,22 +3,27 @@ import { Modal, Button, Col, Row } from "react-bootstrap";
 import "./style.css";
 
 const PopupComponent = ({ show, handleClose, handleSave, title, fields, initialData = {} }) => {
+    // khoi tao gia tri hien thi o form popup
     const [formData, setFormData] = useState({});
 
+    //cap nhat gia tri formData khi initialData thay doi
     useEffect(() => {
         setFormData(initialData);
     }, [initialData]);
 
+    //ham duoc goi de cap nhat gia tri moi cho key trong form
     const handleChange = (name, value) => {
         setFormData((prev) => ({
-            ...prev,
-            [name]: value,
+            ...prev, // set gia tri cu khong bi thay doi
+            // key : value
+            [name]: value, // cap nhat gia tri moi cho key trong form vua nhap
         }));
     };
 
+    //khi bam nut xac nhan
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleSave(formData);
+        handleSave(formData); // luu du lieu cua form popup de gui len server
     };
 
     return (

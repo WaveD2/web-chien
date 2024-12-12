@@ -3,14 +3,16 @@ import Pagination from "react-bootstrap/Pagination";
 import "./style.css";
 
 const PaginationComponent = ({
-    totalItems = 100,
-    itemsPerPage = 10,
-    currentPage = 1,
-    onPageChange,
+    totalItems = 100,   // tong so luong hang hien thi
+    itemsPerPage = 10, // so luong hang hien thi
+    currentPage = 1, // trang hien tai
+    onPageChange, // ham duoc goi khi trang hien tai thay doi
 }) => {
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    const totalPages = Math.ceil(totalItems / itemsPerPage); // tong so trang = tong so hang / so luong hang hien thi
     const [activePage, setActivePage] = useState(currentPage);
 
+    // ham duoc goi khi thay doi page
     const handlePageChange = (page) => {
         if (page >= 1 && page <= totalPages) {
             setActivePage(page);

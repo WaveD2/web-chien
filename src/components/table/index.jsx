@@ -25,15 +25,23 @@ const AppointmentTable = ({ rows, columns, isLoading = true, onDelete, onEdit })
                         <tbody>
                             {rows.map((appointment, index) => (
                                 <tr key={index}>
+                                    {/* Ten */}
                                     <td>{truncateText(appointment.fullName, 20)}</td>
+                                    {/* Sdt */}
                                     <td>{truncateText(appointment.phone, 15)}</td>
+                                    {/* Email */}
                                     <td>{truncateText(appointment.email, 25)}</td>
+                                    {/* Lich Hen */}
                                     <td>{appointment.bookingDate}</td>
+                                    {/* Dich Vu */}
                                     <td>{truncateText(appointment.serviceType, 20)}</td>
+                                    {/* Dia chi */}
                                     <td>{truncateText(appointment.address, 30)}</td>
+                                    {/* trang thai */}
                                     {columns.includes("Trạng Thái") && (
                                         <td>{truncateText(appointment.status, 10)}</td>
                                     )}
+                                    {/* chinh sua */}
                                     <td className="action-buttons">
                                         <Button
                                             variant="primary"
